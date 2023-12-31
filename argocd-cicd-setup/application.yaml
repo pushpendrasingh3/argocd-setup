@@ -10,9 +10,10 @@ metadata:
 spec:
   project: my-app-project
   source:
-    repoURL: 
+    repoURL: https://github.com/pushpendrasingh3/argocd-setup.git
     targetRevision: HEAD
-    path: environments/dev/my-app
+    path: argocd-cicd-setup/dev
+    #path: environments/dev/my-app
   destination:
     server: https://kubernetes.default.svc
     namespace: my-app
