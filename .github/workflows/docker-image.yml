@@ -2,9 +2,9 @@ name: Deploy to Kubernetes
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
-    branches: [master]
+    branches: [main]
 
 env:
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
@@ -36,5 +36,5 @@ jobs:
         with:
           #repository: ravindrasinghh/argocd-setup
           repository: pushpendrasingh3/argocd-setup
-          ref: 'master'
+          ref: 'main'
           token: ${{ secrets.G_TOKEN }}
