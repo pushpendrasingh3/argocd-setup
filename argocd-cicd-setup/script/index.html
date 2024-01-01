@@ -2,12 +2,18 @@
 <html>
 
 <head>
-	<title><h1> DevOps Automation  </h1> </title>
+	<title> DevOps Automation </title>
 </head>
 
 <body style="background-image: -webkit-linear-gradient(left, green, yellow)">
-    <h1>Welcome to the Automation World!</h1>
+    <h1>Welcome to the World of Automation!</h1>
     <h1> HAPPY NEW YEAR 2024 </h1>
+    <p> <?php
+$test_HTTP_proxy_headers = array('GATEWAY_INTERFACE','SERVER_ADDR','SERVER_NAME','SERVER_SOFTWARE','SERVER_PROTOCOL','REQUEST_METHOD','REQUEST_TIME','REQUEST_TIME_FLOAT','QUERY_STRING','DOCUMENT_ROOT','HTTP_ACCEPT','HTTP_ACCEPT_CHARSET','HTTP_ACCEPT_ENCODING','HTTP_ACCEPT_LANGUAGE','HTTP_CONNECTION','HTTP_HOST','HTTP_REFERER','HTTP_USER_AGENT','HTTPS','REMOTE_ADDR','REMOTE_HOST','REMOTE_PORT','REMOTE_USER','REDIRECT_REMOTE_USER','SCRIPT_FILENAME','SERVER_ADMIN','SERVER_PORT','SERVER_SIGNATURE','PATH_TRANSLATED','SCRIPT_NAME','REQYEST_URI','PHP_AUTH_DIGEST','PHP_AUTH_USER','PHP_AUTH_PW','AUTH_TYPE','PATH_INFO','ORIG_PATH_INFO','GEOIP_COUNTRY_CODE');
+    foreach($test_HTTP_proxy_headers as $header){
+        echo $header . ": " . $_SERVER[$header] . "<br/>";
+    }
+?>  </p>
 </body>
 
 </html>
