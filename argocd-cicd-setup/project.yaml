@@ -7,23 +7,26 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-        #syncPolicy:
-        #automated: {}
-    #  prune: true
-    #  selfHeal: true
   # Project description
-  description: Learning CICD
+  description: Learning CICD Project
+
   # Allow manifests to deploy from any Git repos
   sourceRepos:
   - '*'
+
+  # Only permit applications to deploy to the guestbook namespace in the same cluster
+  # Destination clusters can be identified by 'server', 'name', or both.
   destinations:
   - namespace: my-app
     server: https://kubernetes.default.svc
+    #name: cluster1
+
   # Deny all cluster-scoped resources from being created, except for Namespace
   clusterResourceWhitelist:
   - group: ''
     kind: Namespace
 
-  #  is a feature that allows you to automatically delete Kubernetes resources that are no longer managed by any application in the ArgoCD cluster. 
+  # Enables namespace orphaned resource monitoring.
   orphanedResources:
     warn: false
+
