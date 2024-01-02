@@ -5,7 +5,7 @@ metadata:
   name: my-custom-container
   namespace: my-app
 spec:
-  replicas: 0
+  replicas: 5
   selector:
     matchLabels:
       app: nginx
