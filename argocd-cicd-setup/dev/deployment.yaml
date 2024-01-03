@@ -5,14 +5,14 @@ metadata:
   name: my-custom-container
   namespace: my-app
 spec:
-  replicas: 5
+  replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      app: apache
   template:
     metadata:
       labels:
-        app: nginx
+        app: apache
     spec:
       containers:
         - name: my-container
@@ -24,10 +24,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-nginx
+  name: my-apache
   namespace: my-app
   labels:
-    app: nginx
+    app: apache
 spec:
   type: LoadBalancer      
   ports:
