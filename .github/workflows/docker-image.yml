@@ -33,6 +33,7 @@ jobs:
       # Build Docker image and push it to Docker Hub
       - name: Build and push Docker image
         run: |
+          echo "GIT_TAG=`echo $(git describe --tags --abbrev=0)`" >> "$GITHUB_ENV"      
           docker build -t ${DOCKER_USER}/my-app:${GIT_TAG} -f argocd-cicd-setup/Dockerfile .
           docker push ${DOCKER_USER}/my-app:${GIT_TAG}
       - name: Login to GitHub Packages
