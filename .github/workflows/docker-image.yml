@@ -33,12 +33,11 @@ jobs:
       # Build Docker image and push it to Docker Hub
       - name: Build and push Docker image
         run: |
-          docker build -t ${DOCKER_USER}/my-app:latest -f argocd-cicd-setup/Dockerfile .
+          docker build -t ${DOCKER_USER}/my-app:$GITHUB_ENV -f argocd-cicd-setup/Dockerfile .
           docker push ${DOCKER_USER}/my-app:latest
       - name: Login to GitHub Packages
         uses: actions/checkout@v3
         with:
-          #repository: ravindrasinghh/argocd-setup
           repository: pushpendrasingh3/argocd-setup
           ref: 'main'
           token: ${{ secrets.G_TOKEN }}
