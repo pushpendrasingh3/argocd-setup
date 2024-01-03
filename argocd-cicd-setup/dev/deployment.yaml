@@ -5,7 +5,7 @@ metadata:
   name: my-custom-container
   namespace: my-app
 spec:
-  replicas: 6
+  replicas: 7
   selector:
     matchLabels:
       app: apache
