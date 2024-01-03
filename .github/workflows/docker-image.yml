@@ -10,7 +10,6 @@ env:
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
   DOCKER_USER: ${{ secrets.DOCKER_USER }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-  DOCKER_VERSION: "1.1.0"
 
 jobs:
   deploy:
@@ -30,7 +29,7 @@ jobs:
       # Build Docker image and push it to Docker Hub
       - name: Build and push Docker image
         run: |
-          docker build -t ${DOCKER_USER}/my-app:${DOCKER_VERSION} -f argocd-cicd-setup/Dockerfile .
+          docker build -t ${DOCKER_USER}/my-app:latest -f argocd-cicd-setup/Dockerfile .
           docker push ${DOCKER_USER}/my-app:latest
       - name: Login to GitHub Packages
         uses: actions/checkout@v3
