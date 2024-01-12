@@ -5,7 +5,7 @@ metadata:
   name: my-custom-container
   namespace: my-app
 spec:
-  replicas: 2
+  replicas: 10
   selector:
     matchLabels:
       app: apache
@@ -17,7 +17,7 @@ spec:
       containers:
         - name: my-container
           imagePullPolicy: Always
-          image: pushpendras21/my-app:1.2.9
+          image: pushpendras21/my-app:1.3.0
           ports:
             - containerPort: 80
 ---
