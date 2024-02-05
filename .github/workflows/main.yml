@@ -2,6 +2,9 @@ name: main
 on:
   workflow_dispatch:
 
+env:
+  INPUT_SECRET: ${{ secrets.GH_TOKEN }}
+
 jobs:
   build:
     name: build
