@@ -17,7 +17,7 @@ spec:
       containers:
         - name: my-container
           imagePullPolicy: Always
-          image: pushpendras21/my-app:1.3.9
+          image: pushpendras21/my-app:1.4.0
           ports:
             - containerPort: 80
 ---
@@ -29,7 +29,7 @@ metadata:
   labels:
     app: apache
 spec:
-  type: LoadBalancer      
+  type: NodePort      
   ports:
   - port: 80
     protocol: TCP
