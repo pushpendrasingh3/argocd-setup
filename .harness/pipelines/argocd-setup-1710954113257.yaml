@@ -21,7 +21,10 @@ pipeline:
                   identifier: echo
                   name: echo
                   spec:
-                    command: echo hello world
+                    command: |-
+                      echo "Welcome to Harness CI"
+                      go build
+                      go test
                   timeout: ""
                   type: Run
           platform:
