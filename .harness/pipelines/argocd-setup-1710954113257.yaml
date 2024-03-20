@@ -23,8 +23,7 @@ pipeline:
                   spec:
                     command: |-
                       echo "Welcome to Harness CI"
-                      go build
-                      go test
+                      echo "Hello Harness CI"
                   timeout: ""
                   type: Run
           platform:
