@@ -10,7 +10,7 @@ env:
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
   DOCKER_USER:     ${{ secrets.DOCKER_USER }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-  GH_TOKEN:        ${{ secrets.GH_TOEKN }}
+  GH_TOKEN:        ${{ secrets.G_TOEKN }}
   GIT_TAG: 1.4.8
 jobs:
   build:
@@ -39,4 +39,4 @@ jobs:
         with:
           repository: pushpendrasingh3/argocd-setup
           ref: 'main'
-          token: ${{ secrets.GH_TOKEN }}          
+          token: ${{ secrets.G_TOKEN }}          
