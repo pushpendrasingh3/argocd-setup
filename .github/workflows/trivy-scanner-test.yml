@@ -6,11 +6,12 @@ on:
 
 env:
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-  DOCKER_USER: ${{ secrets.DOCKER_USER }}
+  DOCKER_USER:     ${{ secrets.DOCKER_USER }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-  GIT_TAG: 1.4.4
+  GH_TOKEN:        ${{ secrets.GH_TOKEN }}
+  GIT_TAG: 1.4.6
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
