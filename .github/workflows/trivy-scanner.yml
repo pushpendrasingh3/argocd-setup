@@ -34,3 +34,9 @@ jobs:
           echo "$GITHUB_ENV"
           docker build -t ${DOCKER_USER}/test-app:${GIT_TAG} -f argocd-cicd-setup/Dockerfile .
           docker push ${DOCKER_USER}/test-app:${GIT_TAG}          
+      - name: Login to GitHub Packages
+        uses: actions/checkout@v3
+        with:
+          repository: pushpendrasingh3/argocd-setup
+          ref: 'main'
+          token: ${{ secrets.GH_TOKEN }}          
