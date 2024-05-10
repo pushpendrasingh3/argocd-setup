@@ -1,14 +1,14 @@
 name: trivy scanner test
 
 on:
-  workflow_dispatch:
+  push:
     branches: [main]
 
 env:
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
   DOCKER_USER: ${{ secrets.DOCKER_USER }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-  GIT_TAG: 1.4.2
+  GIT_TAG: 1.4.4
 jobs:
   deploy:
     runs-on: ubuntu-latest
