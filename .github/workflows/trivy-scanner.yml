@@ -32,8 +32,8 @@ jobs:
       - name: Build and push Docker image
         run: |
           echo "$GITHUB_ENV"
-          docker build -t ${DOCKER_USER}/test-app:${GIT_TAG} -f argocd-cicd-setup/Dockerfile .
-          docker push ${DOCKER_USER}/test-app:${GIT_TAG}          
+          docker build -t ${DOCKER_USER}/my-app:${GIT_TAG} -f argocd-cicd-setup/Dockerfile .
+          docker push ${DOCKER_USER}/my-app:${GIT_TAG}          
       - name: Login to GitHub Packages
         uses: actions/checkout@v3
         with:
