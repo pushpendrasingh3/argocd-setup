@@ -1,0 +1,25 @@
+name: Trivy Scanning & Testing
+
+on:
+  push:
+    branches: [main]
+  #pull_request:
+    #branches: [main]
+
+env:
+  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+  DOCKER_USER:     ${{ secrets.DOCKER_USER }}
+  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+  GH_TOKEN:        ${{ secrets.GH_TOEKN }}
+  GIT_TAG: 1.4.8
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Get latest tag
+        run: |
+          echo "GIT_TAG=`cat version`" >> "$GITHUB_ENV"
+          echo "$GITHUB_ENV"
