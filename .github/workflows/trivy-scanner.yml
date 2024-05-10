@@ -40,7 +40,7 @@ jobs:
           repository: pushpendrasingh3/argocd-setup
           ref: 'main'
           token: ${{ secrets.G_TOKEN }}          
-     - name: Run Trivy vulnerability scanner
+      - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: docker.io/${DOCKER_USER}/my-app:${GIT_TAG}
