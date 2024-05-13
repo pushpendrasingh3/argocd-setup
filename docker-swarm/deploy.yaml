@@ -17,3 +17,4 @@ spec:
       automountServiceAccountToken: false
       containers:
       - name: docker-swarm-visualizer
+      - image: pushpendrasingh3tcscom/docker-swarm:8948279-28
