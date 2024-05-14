@@ -10,7 +10,7 @@ env:
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
   DOCKER_USER: ${{ secrets.DOCKER_USER }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-  GIT_TAG: 1.4.2
+  GIT_TAG: 1.5.9
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -34,7 +34,7 @@ jobs:
       # Build Docker image and push it to Docker Hub
       - name: Build and push Docker image
         run: |
-          echo "GIT_TAG=`echo $(git describe --tags --abbrev=0)`" >> "$GITHUB_ENV"      
+          #echo "GIT_TAG=`echo $(git describe --tags --abbrev=0)`" >> "$GITHUB_ENV"      
           docker build -t ${DOCKER_USER}/my-app:${GIT_TAG} -f argocd-cicd-setup/Dockerfile .
           docker push ${DOCKER_USER}/my-app:${GIT_TAG}
       - name: Login to GitHub Packages
