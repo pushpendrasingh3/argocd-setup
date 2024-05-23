@@ -17,14 +17,14 @@ spec:
       containers:
         - name: my-container
           imagePullPolicy: Always
-          image: pushpendras21/my-app:1.5.9
+          image: pushpendrasingh3tcscom/my-app:1.6.0
           ports:
             - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-apache
+  name: my-apache-svc
   namespace: my-app
   labels:
     app: apache

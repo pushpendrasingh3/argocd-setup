@@ -10,7 +10,7 @@ env:
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
   DOCKER_USER: ${{ secrets.DOCKER_USER }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-  GIT_TAG: 1.5.9
+  GIT_TAG: 1.6.0
 jobs:
   deploy:
     runs-on: ubuntu-latest

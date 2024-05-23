@@ -1,2 +1,2 @@
 # argocd-setup
-argocd initial setup
+argocd reconfiguration to new setup
