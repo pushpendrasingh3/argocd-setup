@@ -14,7 +14,7 @@ spec:
     targetRevision: HEAD
     path: argocd-cicd-setup/dev
   destination:
-    server: https://kubernetes.default.svc
+    server: https://35.200.190.20
     namespace: my-app
   syncPolicy:
     automated:
